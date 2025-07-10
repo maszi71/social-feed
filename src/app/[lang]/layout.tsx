@@ -21,7 +21,7 @@ export default async function RootLayout({
   const t = await getDictionary(lang);
 
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body>
         <ThemeProvider>
           <ReactQueryProvider>
