@@ -1,4 +1,10 @@
 {
- "welcome": "Bienvenido",
-  "description": "Esta es una página en español"
+  "welcome": "Bienvenido",
+  "description": "Esta es una página en español",
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+  "feedTitle": "Fuente Social",
+  "endMessage": "Has llegado al final 🎉"
 }

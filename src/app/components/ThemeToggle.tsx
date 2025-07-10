@@ -1,18 +1,22 @@
-'use client';
+"use client";
 
-import { useTheme } from '../providers/ThemeProvider';
+import { useTheme } from "../providers/ThemeProvider";
 
-export default function ThemeToggle() {
+type ThemeLabels = {
+  light: string;
+  dark: string;
+};
+
+export default function ThemeToggle({ labels }: { labels: ThemeLabels }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 text-sm border rounded border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+      className="p-2 text-sm border rounded cursor-pointer border-gray-300 dark:border-gray-700  transition"
       aria-label="Toggle theme"
     >
-      {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+      {theme === "light" ? labels.dark : labels.light}
     </button>
   );
 }
-
