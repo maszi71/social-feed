@@ -13,7 +13,7 @@ export default async function FeedPage({
   return (
     <main className="p-4 max-w-3xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">{t.feedTitle}</h1>
-      <FeedList endMessage={t.endMessage} />
+      <FeedList lang={lang} endMessage={t.endMessage} />
     </main>
   );
 }

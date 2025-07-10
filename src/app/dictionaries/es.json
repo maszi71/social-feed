@@ -6,5 +6,7 @@
     "dark": "Oscuro"
   },
   "feedTitle": "Fuente Social",
-  "endMessage": "Has llegado al final 🎉"
+  "endMessage": "Has llegado al final 🎉",
+  "backToFeed": "← Volver al inicio",
+  "comments": "Comentarios"
 }

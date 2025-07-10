@@ -5,8 +5,9 @@ import { Post } from "./Post";
 import { PostSkeleton } from "./PostSkeleton";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { PostType } from "../types/PostType";
+import { Locale } from "../lib/i18n-config";
 
-export default function FeedList({ endMessage }: { endMessage?: string }) {
+export default function FeedList({ endMessage , lang }: { endMessage?: string , lang: Locale }) {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
     usePosts();
   const loaderRef = useIntersectionObserver(
@@ -32,7 +33,7 @@ export default function FeedList({ endMessage }: { endMessage?: string }) {
   return (
     <div className="space-y-4">
       {data?.pages.map((page) =>
-        page.map((post: PostType) => <Post key={post.id} post={post} />)
+        page.map((post: PostType) => <Post lang={lang} key={post.id} post={post} />)
       )}
 
       {isFetchingNextPage &&

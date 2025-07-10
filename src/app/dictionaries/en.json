@@ -6,5 +6,7 @@
     "dark": "Dark"
   },
   "feedTitle": "Social Feed",
-  "endMessage": "You've reached the end 🎉"
+  "endMessage": "You've reached the end 🎉",
+  "backToFeed": "← Back to Feed",
+  "comments": "Comments"
 }

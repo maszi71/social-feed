@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
     <select
       value={currentLocale}
       onChange={(e) => switchLocale(e.target.value)}
-      className="p-1 rounded bg-transparent border border-gray-300 dark:border-gray-700 text-sm"
+      className="p-1 cursor-pointer rounded bg-transparent border border-gray-300 dark:border-gray-700 text-sm"
       aria-label="Select language"
     >
       <option value="en">English</option>
