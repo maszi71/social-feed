@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import { getDictionary } from "../lib/dictionaries";
 import { Locale } from "@/app/lib/i18n-config";
 
@@ -9,7 +10,8 @@ export default async function Home({
   const t = await getDictionary(lang);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <Header/>
       <p className="">{t.welcome}</p>
       {t.description}
     </main>
