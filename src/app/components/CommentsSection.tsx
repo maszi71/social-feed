@@ -1,4 +1,4 @@
-import { CommentType } from "../types/CommentType";
+import { CommentType } from "@/app/types/CommentType";
 
 
 export function CommentsSection({

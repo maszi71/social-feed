@@ -1,11 +1,11 @@
 "use client";
 
-import { usePosts } from "../hooks/usePosts";
+import { usePosts } from "@/app/hooks/usePosts";
 import { Post } from "./Post";
 import { PostSkeleton } from "./PostSkeleton";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { PostType } from "../types/PostType";
-import { Locale } from "../lib/i18n-config";
+import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver";
+import { PostType } from "@/app/types/PostType";
+import { Locale } from "@/app/lib/i18n-config";
 
 export default function FeedList({ endMessage , lang }: { endMessage?: string , lang: Locale }) {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =

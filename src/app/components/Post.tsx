@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { PostType } from "@/app/types/PostType";
-import { Locale } from "../lib/i18n-config";
+import { Locale } from "@/app/lib/i18n-config";
 import Link from "next/link";
 
 export function Post({ post, lang }: { post: PostType; lang: Locale }) {

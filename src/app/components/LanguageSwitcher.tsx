@@ -1,8 +1,9 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
+import { i18n } from '@/app/lib/i18n-config';
 
-const locales = ['en', 'es'] as const;
+const locales = i18n['locales'];
 
 export default function LanguageSwitcher() {
   const router = useRouter();

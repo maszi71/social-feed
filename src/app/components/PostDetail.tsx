@@ -1,6 +1,5 @@
-// components/PostDetail.tsx
 import Image from "next/image";
-import { PostType } from "../types/PostType";
+import { PostType } from "@/app/types/PostType";
 
 
 

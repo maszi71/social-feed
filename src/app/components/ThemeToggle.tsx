@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "../providers/ThemeProvider";
+import { useTheme } from "@/app/providers/ThemeProvider";
 
 type ThemeLabels = {
   light: string;
