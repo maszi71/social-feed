@@ -5,17 +5,20 @@ import ReactQueryProvider from "@/app/providers/ReactQueryProvider";
 import { getDictionary } from "@/app/lib/dictionaries";
 import { Locale } from "@/app/lib/i18n-config";
 import Header from "@/app/components/Header";
+import { LangProvider } from "@/app/providers/LangContext";
 
 export const metadata: Metadata = {
   title: "Social Feed",
   description: "A multilingual social feed application",
 };
 
-export default async function RootLayout(props: Readonly<{
-  children: React.ReactNode;
-  params: { lang: Locale };
-}>) {
-  const { lang } = await props.params; 
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: { lang: Locale };
+  }>
+) {
+  const { lang } = await props.params;
   const t = await getDictionary(lang);
 
   return (
@@ -23,8 +26,12 @@ export default async function RootLayout(props: Readonly<{
       <body>
         <ThemeProvider>
           <ReactQueryProvider>
-            <Header welcomeMessage={t.welcome} themeLabels={t.theme} />
-            <main className="max-w-4xl mx-auto px-4 py-6">{props.children}</main>
+            <LangProvider lang={lang} dictionary={t}>
+              <Header welcomeMessage={t.welcome} themeLabels={t.theme} />
+              <main className="max-w-4xl mx-auto px-4 py-6">
+                {props.children}
+              </main>
+            </LangProvider>
           </ReactQueryProvider>
         </ThemeProvider>
       </body>
