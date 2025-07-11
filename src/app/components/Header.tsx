@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "./ThemeToggle";
+import Link from 'next/link';
+import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 
 type HeaderProps = {
   welcomeMessage: string;
@@ -18,7 +19,15 @@ export default function Header({ welcomeMessage, themeLabels }: HeaderProps) {
         <LanguageSwitcher />
         <ThemeToggle labels={themeLabels} />
       </div>
-      <div className="text-sm font-medium">{welcomeMessage}</div>
+      <div className="flex items-center gap-4">
+        <span className="text-sm font-medium">{welcomeMessage}</span>
+        <Link
+          href="/post/new"
+          className="text-sm font-medium px-3 py-1 rounded-md border bg-blue-400"
+        >
+          + New Post
+        </Link>
+      </div>
     </header>
   );
 }
