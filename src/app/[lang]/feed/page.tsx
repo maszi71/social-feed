@@ -1,13 +1,13 @@
-
 import FeedList from "@/app/components/FeedList";
 import { getDictionary } from "@/app/lib/dictionaries";
 import { Locale } from "@/app/lib/i18n-config";
 
 export default async function FeedPage({
-  params: { lang },
+  params,
 }: {
   params: { lang: Locale };
 }) {
+  const { lang } = await params;
   const t = await getDictionary(lang);
 
   return (

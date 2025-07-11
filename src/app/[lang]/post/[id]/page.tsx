@@ -11,7 +11,7 @@ export default async function PostDetailPage({
 }: {
   params: { id: string; lang: Locale };
 }) {
-  const { id, lang } = params;
+  const { id, lang } = await params;
   const t = await getDictionary(lang);
 
   const post = await apiFetch<PostType>(`/posts/${id}`);
