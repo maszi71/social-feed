@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PostPreview } from "./PostPreview";
+import { useT } from "@/app/providers/LangContext";
 
 export type PostFormData = {
   title: string;
@@ -15,9 +16,11 @@ type Props = {
 };
 
 export function PostForm({ onSubmit, isSubmitting }: Props) {
+  const t = useT();
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,7 +59,7 @@ export function PostForm({ onSubmit, isSubmitting }: Props) {
         disabled={isSubmitting}
         className="px-4 py-2 cursor-pointer bg-blue-600 text-white rounded  disabled:opacity-50"
       >
-        {isSubmitting ? "Submitting..." : "Create Post"}
+        {isSubmitting ? `${t.submitting}` : `${t.createPostTitle}`}
       </button>
 
       <PostPreview title={title} image={image} body={body} />

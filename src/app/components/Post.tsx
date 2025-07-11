@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { PostType } from "@/app/types/PostType";
-import { Locale } from "@/app/lib/i18n-config";
 import Link from "next/link";
+import { useLang } from "@/app/providers/LangContext";
 
-export function Post({ post, lang }: { post: PostType; lang: Locale }) {
+export function Post({ post }: { post: PostType; }) {
+   const lang = useLang();
   return (
     <div className="rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden ransition-colors duration-300">
       <Link href={`/${lang}/post/${post.id}`}>

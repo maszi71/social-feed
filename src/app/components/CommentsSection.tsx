@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiFetch } from "@/app/lib/api";
 import { CommentType } from "@/app/types/CommentType";
+import { useT } from "@/app/providers/LangContext";
 
 type Props = {
   postId: string;
@@ -10,6 +11,7 @@ type Props = {
 };
 
 export function CommentsSection({ postId, title }: Props) {
+   const t = useT();
   const { data, isLoading, error } = useQuery<CommentType[]>({
     queryKey: ["comments", postId],
     queryFn: () =>
@@ -19,8 +21,8 @@ export function CommentsSection({ postId, title }: Props) {
       ),
   });
 
-  if (isLoading) return <p>Loading comments...</p>;
-  if (error) return <p>Failed to load comments.</p>;
+  if (isLoading) return <p>{t.loadingComments}</p>;
+  if (error) return <p>{t.failedToLoadComments}</p>;
 
   return (
     <section>

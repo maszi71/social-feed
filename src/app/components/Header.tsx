@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import LanguageSwitcher from './LanguageSwitcher';
-import ThemeToggle from './ThemeToggle';
+import Link from "next/link";
+import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
+import { useT } from "@/app/providers/LangContext";
 
 type HeaderProps = {
   welcomeMessage: string;
@@ -13,8 +14,9 @@ type HeaderProps = {
 };
 
 export default function Header({ welcomeMessage, themeLabels }: HeaderProps) {
+  const t = useT();
   return (
-    <header className="w-full px-4 py-3 border-b border-gray-200 dark:border-neutral-800 flex items-center justify-between bg-[var(--background)] text-[var(--foreground)]">
+    <header className="w-full px-4 py-3 border-b border-gray-200  flex items-center justify-between bg-[var(--background)] text-[var(--foreground)]">
       <div className="flex items-center gap-4">
         <LanguageSwitcher />
         <ThemeToggle labels={themeLabels} />
@@ -25,7 +27,7 @@ export default function Header({ welcomeMessage, themeLabels }: HeaderProps) {
           href="/post/new"
           className="text-sm font-medium px-3 py-1 rounded-md border bg-blue-400"
         >
-          + New Post
+          {t.newPost}
         </Link>
       </div>
     </header>
