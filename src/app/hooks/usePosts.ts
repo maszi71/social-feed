@@ -1,4 +1,4 @@
-// app/feed/hooks/usePosts.ts
+
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 const fetchPosts = async ({ pageParam = 1 }) => {
