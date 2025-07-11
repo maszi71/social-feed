@@ -7,5 +7,14 @@
   "feedTitle": "Fuente Social",
   "endMessage": "Has llegado al final 🎉",
   "backToFeed": "← Volver al inicio",
-  "comments": "Comentarios"
+  "comments": "Comentarios",
+  "loadingComments": "Cargando comentarios...",
+  "failedToLoadComments": "Error al cargar los comentarios",
+  "newPost": "+ Nueva Publicación",
+  "submitting": "Enviando...",
+  "createPostTitle": "Crear Publicación",
+  "livePreview": "Vista Previa",
+  "postBodyPlaceholder": "Contenido de la publicación...",
+  "postError": "Error al crear la publicación. Inténtalo de nuevo.",
+  "createNewPost": "Crear Nuevo Post"
 }
