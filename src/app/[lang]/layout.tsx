@@ -11,13 +11,11 @@ export const metadata: Metadata = {
   description: "A multilingual social feed application",
 };
 
-export default async function RootLayout({
-  children,
-  params: { lang },
-}: Readonly<{
+export default async function RootLayout(props: Readonly<{
   children: React.ReactNode;
   params: { lang: Locale };
 }>) {
+  const { lang } = await props.params; 
   const t = await getDictionary(lang);
 
   return (
@@ -26,7 +24,7 @@ export default async function RootLayout({
         <ThemeProvider>
           <ReactQueryProvider>
             <Header welcomeMessage={t.welcome} themeLabels={t.theme} />
-            <main className="max-w-4xl mx-auto px-4 py-6">{children}</main>
+            <main className="max-w-4xl mx-auto px-4 py-6">{props.children}</main>
           </ReactQueryProvider>
         </ThemeProvider>
       </body>
